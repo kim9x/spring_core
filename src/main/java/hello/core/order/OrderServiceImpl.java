@@ -1,6 +1,6 @@
 package hello.core.order;
 
-import hello.core.discount.DisCountPolicy;
+import hello.core.discount.DiscountPolicy;
 import hello.core.discount.FixDiscountPolicy;
 import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
@@ -10,11 +10,11 @@ import hello.core.member.MemoryMemberRepository;
 public class OrderServiceImpl implements OrderService {
 	
 	private final MemberRepository memberRepository;
-	private final DisCountPolicy disCountPolicy;
+	private final DiscountPolicy disCountPolicy;
 //	private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
 //	private final DisCountPolicy disCountPolicy = new RateDiscountPolicy();
 	
-	public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
 		super();
 		this.memberRepository = memberRepository;
 		this.disCountPolicy = disCountPolicy;
