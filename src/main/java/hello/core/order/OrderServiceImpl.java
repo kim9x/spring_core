@@ -11,7 +11,8 @@ public class OrderServiceImpl implements OrderService {
 	
 	private final MemberRepository memberRepository = new MemoryMemberRepository();
 //	private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
-	private final DisCountPolicy disCountPolicy = new RateDiscountPolicy();
+//	private final DisCountPolicy disCountPolicy = new RateDiscountPolicy();
+	private DisCountPolicy disCountPolicy;
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
