@@ -9,10 +9,16 @@ import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService {
 	
-	private final MemberRepository memberRepository = new MemoryMemberRepository();
+	private final MemberRepository memberRepository;
+	private final DisCountPolicy disCountPolicy;
 //	private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
 //	private final DisCountPolicy disCountPolicy = new RateDiscountPolicy();
-	private DisCountPolicy disCountPolicy;
+	
+	public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+		super();
+		this.memberRepository = memberRepository;
+		this.disCountPolicy = disCountPolicy;
+	}	
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -20,6 +26,6 @@ public class OrderServiceImpl implements OrderService {
 		int discouontPrice = disCountPolicy.discouont(member, itemPrice);
 		
 		return new Order(memberId, itemName, itemPrice, discouontPrice);
-	}
-
+	}  
+ 
 }
