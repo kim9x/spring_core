@@ -18,7 +18,7 @@ public class OrderServiceImpl implements OrderService {
 		super();
 		this.memberRepository = memberRepository;
 		this.disCountPolicy = disCountPolicy;
-	}	
+	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -26,6 +26,11 @@ public class OrderServiceImpl implements OrderService {
 		int discouontPrice = disCountPolicy.discouont(member, itemPrice);
 		
 		return new Order(memberId, itemName, itemPrice, discouontPrice);
-	}  
+	}
+	
+	// 테스트 용도
+	public MemberRepository getMemberRepository() {
+		return memberRepository;
+	}
  
 }
