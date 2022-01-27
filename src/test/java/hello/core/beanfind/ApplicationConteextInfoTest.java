@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import hello.core.AppConfig;
+import hello.core.member.MemberRepository;
 
 public class ApplicationConteextInfoTest {
 	
@@ -35,6 +36,13 @@ public class ApplicationConteextInfoTest {
 				System.out.println("name = " + beanDefinitionName + " object = " + bean);
 			}
 		}
+	}
+	
+	@Test
+	void test() {
+		MemberRepository memberRepository = ac.getBean(MemberRepository.class);
+		
+		System.out.println("memberRepository.getClass() : " + memberRepository.getClass());
 	}
 
 }
