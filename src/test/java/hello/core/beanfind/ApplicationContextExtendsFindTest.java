@@ -9,6 +9,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.annotation.Testable;
 import org.springframework.beans.factory.NoUniqueBeanDefinitionException;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,7 @@ import hello.core.discount.RateDiscountPolicy;
 
 public class ApplicationContextExtendsFindTest {
 	
-	AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
+	ApplicationContext ac = new AnnotationConfigApplicationContext(TestConfig.class);
 	
 	@Test
 	@DisplayName("부모 타입으로 조회 시, 자식이 둘 이상 있으면, 중복 오류가 발생한다.")
