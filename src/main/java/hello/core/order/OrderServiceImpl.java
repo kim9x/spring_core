@@ -19,11 +19,11 @@ public class OrderServiceImpl implements OrderService {
 //	private MemberRepository memberRepository;
 //	private DiscountPolicy disCountPolicy;	
 	
-	@Autowired
-	private MemberRepository memberRepository;
+//	@Autowired
+	private final MemberRepository memberRepository;
 	
-	@Autowired
-	private DiscountPolicy disCountPolicy;
+//	@Autowired
+	private final DiscountPolicy disCountPolicy;
 	
 //	@Autowired
 //	public void setMemberRepository(MemberRepository memberRepository) {
@@ -35,10 +35,8 @@ public class OrderServiceImpl implements OrderService {
 //		this.disCountPolicy = discountPolicy;
 //	}
 	
-//	@Autowired
+	@Autowired
 	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
-//		System.out.println("memberRepository = " + memberRepository);
-//		System.out.println("disCountPolicy = " + disCountPolicy);
 		this.memberRepository = memberRepository;
 		this.disCountPolicy = disCountPolicy;
 	}
