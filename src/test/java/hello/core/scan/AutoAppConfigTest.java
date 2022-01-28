@@ -8,6 +8,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import hello.core.AutoAppConfig;
 import hello.core.member.MemberService;
 
+
 public class AutoAppConfigTest {
 	
 	@Test
