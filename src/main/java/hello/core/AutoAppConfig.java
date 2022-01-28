@@ -10,11 +10,19 @@ import hello.core.member.MemoryMemberRepository;
 
 @Configuration
 @ComponentScan(
-		basePackages = "hello.core.member",
-		basePackageClasses = AutoAppConfig.class,
+//		basePackages = "hello.core.member",
+//		basePackageClasses = AutoAppConfig.class,
 		excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class)
 		)
 public class AutoAppConfig {
+	
+//	@Autowired MemberRepository memberRepository;
+//	@Autowired DiscountPolicy discountPolicy;
+	
+//	@Bean
+//	OrderService orderSerivce() {
+//		return new OrderServiceImpl(memberRepository, discountPolicy);
+//	}
 	
 	@Bean(name = "memoryMemberRepository")
 	MemberRepository memberRepository() {

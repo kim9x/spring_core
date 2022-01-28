@@ -13,14 +13,32 @@ import hello.core.member.MemoryMemberRepository;
 @Component
 public class OrderServiceImpl implements OrderService {
 	
-	private final MemberRepository memberRepository;
-	private final DiscountPolicy disCountPolicy;
-//	private final DisCountPolicy disCountPolicy = new FixDiscountPolicy();
-//	private final DisCountPolicy disCountPolicy = new RateDiscountPolicy();
+//	private final MemberRepository memberRepository;
+//	private final DiscountPolicy disCountPolicy;
 	
-	@Autowired 
+//	private MemberRepository memberRepository;
+//	private DiscountPolicy disCountPolicy;	
+	
+	@Autowired
+	private MemberRepository memberRepository;
+	
+	@Autowired
+	private DiscountPolicy disCountPolicy;
+	
+//	@Autowired
+//	public void setMemberRepository(MemberRepository memberRepository) {
+//		this.memberRepository = memberRepository;
+//	}
+//	
+//	@Autowired
+//	public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+//		this.disCountPolicy = discountPolicy;
+//	}
+	
+//	@Autowired
 	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
-		super();
+//		System.out.println("memberRepository = " + memberRepository);
+//		System.out.println("disCountPolicy = " + disCountPolicy);
 		this.memberRepository = memberRepository;
 		this.disCountPolicy = disCountPolicy;
 	}
