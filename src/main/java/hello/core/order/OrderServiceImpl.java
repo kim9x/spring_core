@@ -9,37 +9,20 @@ import hello.core.discount.RateDiscountPolicy;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;
 import hello.core.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 	
-//	private final MemberRepository memberRepository;
-//	private final DiscountPolicy disCountPolicy;
-	
-//	private MemberRepository memberRepository;
-//	private DiscountPolicy disCountPolicy;	
-	
-//	@Autowired
 	private final MemberRepository memberRepository;
-	
-//	@Autowired
 	private final DiscountPolicy disCountPolicy;
 	
 //	@Autowired
-//	public void setMemberRepository(MemberRepository memberRepository) {
+//	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
 //		this.memberRepository = memberRepository;
+//		this.disCountPolicy = disCountPolicy;
 //	}
-//	
-//	@Autowired
-//	public void setDiscountPolicy(DiscountPolicy discountPolicy) {
-//		this.disCountPolicy = discountPolicy;
-//	}
-	
-	@Autowired
-	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
-		this.memberRepository = memberRepository;
-		this.disCountPolicy = disCountPolicy;
-	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {
