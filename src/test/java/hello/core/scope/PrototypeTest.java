@@ -15,11 +15,11 @@ public class PrototypeTest {
 	
 	@Test
 	void prototypeBeanFind() {
-		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PtorotypeBean.class);
+		AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(PrototypeBean.class);
 		System.out.println("find prototypeBean1");
-		PtorotypeBean prototypeBean1 = ac.getBean(PtorotypeBean.class);
+		PrototypeBean prototypeBean1 = ac.getBean(PrototypeBean.class);
 		System.out.println("find prototypeBean2");
-		PtorotypeBean prototypeBean2 = ac.getBean(PtorotypeBean.class);
+		PrototypeBean prototypeBean2 = ac.getBean(PrototypeBean.class);
 		
 		System.out.println("prototypeBean1 = " + prototypeBean1);
 		System.out.println("prototypeBean2 = " + prototypeBean2);
@@ -30,7 +30,7 @@ public class PrototypeTest {
 	}
 	
 	@Scope("prototype")
-	static class PtorotypeBean {
+	static class PrototypeBean {
 		@PostConstruct
 		public void init() {
 			System.out.println("PtorotypeBean.init");
