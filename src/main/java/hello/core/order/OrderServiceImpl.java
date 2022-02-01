@@ -10,7 +10,7 @@ import hello.core.member.MemberRepository;
 import lombok.RequiredArgsConstructor;
 
 @Component
-//@RequiredArgsConstructor
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 	
 	private final MemberRepository memberRepository;
@@ -18,11 +18,11 @@ public class OrderServiceImpl implements OrderService {
 //	private final @Qualifier("mainDiscountPolicy") DiscountPolicy discountPolicy;
 //	private final DiscountPolicy rateDiscountPolicy;
 	
-	@Autowired
-	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
-		this.memberRepository = memberRepository;
-		this.discountPolicy = disCountPolicy;
-	}
+//	@Autowired
+//	public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy disCountPolicy) {
+//		this.memberRepository = memberRepository;
+//		this.discountPolicy = disCountPolicy;
+//	}
 
 	@Override
 	public Order createOrder(Long memberId, String itemName, int itemPrice) {

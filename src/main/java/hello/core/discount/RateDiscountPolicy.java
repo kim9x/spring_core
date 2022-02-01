@@ -7,9 +7,9 @@ import hello.core.annotation.MainDiscountPolicy;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 
-@Component
+//@Component
 //@Qualifier("mainDiscountPolicy")
-@MainDiscountPolicy
+//@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy {
 	
 	private int discountPercent = 10;
